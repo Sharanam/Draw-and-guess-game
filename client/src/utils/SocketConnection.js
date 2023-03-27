@@ -1,7 +1,7 @@
 import { io } from 'socket.io-client';
 
 const IO = (playerName, roomId, action) => {
-    return io(process.env.REACT_APP_API_URL, {
+    return io(process.env.REACT_APP_API_URL || "http://localhost:8283", {
         path: process.env.REACT_APP_SOCKET_PATH + '/socket.io',
         query: {
             username: playerName,
